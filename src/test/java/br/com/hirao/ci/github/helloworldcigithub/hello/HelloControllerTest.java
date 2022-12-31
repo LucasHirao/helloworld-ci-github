@@ -24,6 +24,6 @@ public class HelloControllerTest {
     @Test
     void testHello() {
         var resultado = testRestTemplate.getForObject("http://localhost:" + port+ "/", String.class);
-        assertEquals("Hello from contaainer", resultado);
+        assertEquals("Hello from container", resultado);
     }
 }
