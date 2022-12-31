@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -25,6 +24,6 @@ public class HelloControllerTest {
     @Test
     void testHello() {
         var resultado = testRestTemplate.getForObject("http://localhost:" + port+ "/", String.class);
-        assertEquals("Hello from container", resultado);
+        assertEquals("Hello from contaainer", resultado);
     }
 }
