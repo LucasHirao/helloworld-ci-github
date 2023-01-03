@@ -15,7 +15,7 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Executa testes unitários
-        run: mvn verify -f pom.xml
+        run: mvn clean install -f pom.xml
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
