@@ -28,5 +28,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: .
           push: true
-          tags: lucasmh/app:latest
+          tags: lucasmh/hello-java-ci:${{github.run_number}}
