@@ -8,13 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("test")
 public class HelloControllerTest {
-
-    @Autowired
-    private HelloController helloController;
-
     @Autowired
     private TestRestTemplate testRestTemplate;
 
@@ -25,5 +23,11 @@ public class HelloControllerTest {
     void testHello() {
         var resultado = testRestTemplate.getForObject("http://localhost:" + port+ "/", String.class);
         assertEquals("Hello from container", resultado);
+    }
+
+    @Test
+    void testEnv() {
+        var resultado = testRestTemplate.getForObject("http://localhost:" + port+ "/env", String.class);
+        assertEquals("test", resultado);
     }
 }
