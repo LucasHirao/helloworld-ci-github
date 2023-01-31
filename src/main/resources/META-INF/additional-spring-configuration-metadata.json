@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "helloworld.env",
+  "type": "java.lang.String",
+  "description": "Ambiente em que a aplicação está executando. Ex: dev, hom, prod"
+}]}
